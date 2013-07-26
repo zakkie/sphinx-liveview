@@ -26,4 +26,13 @@ server.py options:
   --htdoc                          root directory of HTML documents (default .)
   --port                            (default 8888)
   --watch                          watch file or directory (default .)
-````
+```
+
+
+Example
+-------
+
+```
+server.py --command="pandoc input.md -o hoge.html -s" --htdoc=hoge.html --watch=input.md 
+open http://localhost:8080/hoge.html
+```
