@@ -62,7 +62,9 @@ class MainHandler(tornado.web.RequestHandler):
         # need chroot?
         #logging.debug(self.absolute_path)
         #tornado.web.validate_absolute_path(path)
+        path = os.path.join(options.htdoc, path)
         if not os.path.exists(path):
+            logging.info("cannot find file: %s" % path)
             self.write_error(404)
             return
 
