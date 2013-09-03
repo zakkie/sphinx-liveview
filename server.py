@@ -136,7 +136,8 @@ def main():
     application = tornado.web.Application([
         (r"/ws", WebSocketHandler),
         (r"/assets/(.*)", tornado.web.StaticFileHandler, {"path": assets_path}),
-        (r"/(.*)", MainHandler), 
+        (r"/(.*\.html)", MainHandler),
+        (r"/(.*)", tornado.web.StaticFileHandler, {"path": options.htdoc}),
     ])
     application.listen(8888)
 
