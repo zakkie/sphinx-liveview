@@ -34,5 +34,5 @@ Example
 
 ```
 server.py --command="pandoc input.md -o hoge.html -s" --htdoc=hoge.html --watch=input.md 
-open http://localhost:8080/hoge.html
+open http://localhost:8888/hoge.html
 ```
